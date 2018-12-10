@@ -1,0 +1,26 @@
+{
+    "data" :[
+        {
+            "img":"http://img2.imgtn.bdimg.com/it/u=2165616731,4243991977&fm=11&gp=0.jpg",
+            "title": "动漫图片"
+        },
+        {
+            "img":"http://img0.imgtn.bdimg.com/it/u=2532084526,3873409242&fm=26&gp=0.jpg",
+            "title": "动漫图片"
+        },
+        {
+            "img":"http://img1.imgtn.bdimg.com/it/u=2878087797,798627928&fm=11&gp=0.jpg",
+            "title": "动漫图片"
+        },
+        {
+            "img":"http://img4.imgtn.bdimg.com/it/u=372463116,1144831270&fm=26&gp=0.jpg",
+            "title": "动漫图片"
+        }
+    ],
+    "meta" : [
+        {
+            "status" : 200,
+            "msg" : "请求成功"
+        }
+    ]
+}
