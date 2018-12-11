@@ -1,0 +1,40 @@
+{
+    "data" : [
+        {
+          "id": 1,
+          "title": "新年礼物",
+          "img": "https://i02piccdn.sogoucdn.com/0be5e77fc2b2b2d2",
+          "time": "2017年3月2日",
+          "click": 2
+        },
+        {
+          "id": 2,
+          "title": "新年礼物",
+          "img": "https://i02piccdn.sogoucdn.com/0be5e77fc2b2b2d2",
+          "time": "2017年3月2日",
+          "click": 3
+        },
+        {
+          "id": 3,
+          "title": "新年礼物",
+          "img": "https://i02piccdn.sogoucdn.com/0be5e77fc2b2b2d2",
+          "time": "2017年3月2日",
+          "click": 5
+        },
+        {
+          "id": 4,
+          "title": "新年礼物",
+          "img": "https://i02piccdn.sogoucdn.com/0be5e77fc2b2b2d2",
+          "time": "2017年3月2日",
+          "click": 7
+        },
+        {
+          "id": 5,
+          "title": "新年礼物",
+          "img": "https://i02piccdn.sogoucdn.com/0be5e77fc2b2b2d2",
+          "time": "2017年3月2日",
+          "click": 2
+        }
+    ],
+    "meta": {"status": 200, "msg": "请求成功"}
+}

@@ -1,9 +1,9 @@
 <template>
     <div class="home-contain">
         <mt-swipe :auto="4000" class="swipe">
-            <mt-swipe-item>1</mt-swipe-item>
-            <mt-swipe-item>2</mt-swipe-item>
-            <mt-swipe-item>3</mt-swipe-item>
+            <mt-swipe-item v-for="(item,index) in swipe" :key="index">
+                <img :src="item.img" alt="item.title" class="img">
+            </mt-swipe-item>
         </mt-swipe>
         <nav class="nav">
             <ul class="nav-ul">
@@ -63,9 +63,17 @@
 <script>
 import { swipe } from "@/axios/axios.js"
 export default {
+    data(){
+        return {
+            swipe: []
+        }
+    },
     created(){
         swipe().then((res=>{
-            console.log(res)
+            if(res.data.meta[0].status){
+                console.log(res.data.data)
+                this.swipe = res.data.data
+            }
         }))
     }
 }
@@ -75,6 +83,10 @@ export default {
     .home-contain{
         .swipe{
             height: 200px;
+            .img{
+                height: 100%;
+                width: 100%;
+            }
         }
         .nav{
             margin-top:10px; 
