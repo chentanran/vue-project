@@ -5,7 +5,7 @@ import App from './App'
 import router from './router'
 import "@/style/common.css" //引入基本样式
 import "@/style/font/iconfont.css" //引入字体文件
-import "@/mock/mockServer.js" //模拟数据
+// import "@/mock/mockServer.js" //模拟数据
 
 import { Button, Header, Swipe, SwipeItem } from 'mint-ui' //按需引入mint-ui
 Vue.component(Button.name, Button)
@@ -14,6 +14,18 @@ Vue.component(Swipe.name, Swipe);
 Vue.component(SwipeItem.name, SwipeItem);
 
 Vue.config.productionTip = false
+//格式化时间
+Vue.filter('format', (res)=>{
+    let date = new Date(res)
+    let y = date.getFullYear()
+    let m = (date.getMonth()+1).toString().padStart(2,'0')
+    let d = date.getDay().toString().padStart(2,'0')
+    let hh = date.getHours().toString().padStart(2,'0')
+    let mm = date.getMinutes().toString().padStart(2,'0')
+    let ss = date.getSeconds().toString().padStart(2,'0')
+
+    return `${y}-${m}-${d} ${hh}:${mm}:${ss}`
+})
 
 
 /* eslint-disable no-new */

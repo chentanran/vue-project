@@ -30,8 +30,8 @@ export default {
         getNewsList(){
             newsList().then(res => {
                 // console.log(res)
-                if(res.data.meta.status == 200){
-                   this.newsList = res.data.data
+                if(res.status == 0){
+                   this.newsList = res.message
                 }else{
                     Toast({message:"数据获取失败"})
                 }

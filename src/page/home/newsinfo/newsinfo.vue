@@ -1,31 +1,37 @@
 <template>
     <div class="newsinfo-contain">
-        <h3>生日快乐,啊哈哈哈</h3>
-        <p><span>时间:2018年12月11日22:54:12</span><span>点击:1</span> </p>
+        <h3>{{message.title}}</h3>
+        <p class="timeList"><span>时间:{{message.add_time | format}}</span><span>点击:{{message.click}}</span> </p>
         <br/>
-        <p>
-            老公发工资了，拿回家准备讨好老婆。
-
-        　　就对他的老婆说：“亲爱的，我发工资了。亲我一下钱归你了。”
-
-        　　老婆迟迟无动于衷。老公见老婆没有反应。
-
-        　　又喊了一句：“你要是再不来我就去找人伺候我了，把钱都给她了。”
-
-        　　老婆淡淡地回了一句：“你要是敢去，这些钱你是怎么花的，我就怎么赚回来".
+        <p class="article" v-html="message.content">
+            
         </p>
+        <br/>
+        <comment></comment>
     </div>
 </template>
 
 <script>
+import comment from "@/components/comment/comment.vue"
+import { newsInfo } from "@/axios/axios.js"
 export default {
+    components:{
+        comment
+    },
     data(){
         return {
-
+            message : {}
         }
     },
     created(){
-        console.log(this.$route.params.id)
+       newsInfo(this.$route.params.id).then(res => {
+           console.log(res)
+           if(res.status == 0){
+               this.message = res.message[0]
+               console.log(this.message)
+           }
+       })
+    // console.log(this.$route.params.id)
         
     },
     mounted(){
@@ -34,6 +40,21 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="less">
+    .newsinfo-contain{
+        padding: 3px;
+        h3{
+            text-align:center;
+            margin-bottom: 10px;
+        }
+        .timeList{
+            display: flex;
+            justify-content:space-between;
+            padding: 0 10px;
+            font-size: 13px; 
+        }
+        .article{
+            text-indent: 2em;
+        }
+    }
 </style>
