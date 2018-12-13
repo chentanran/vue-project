@@ -2,22 +2,53 @@
     <div class="comment-contain">
         <h3>评论区:</h3>
         <div class="text">
-            <textarea name="" id="text"  rows="4" placeholder="请发表你对本文章的评论"></textarea>
+            <textarea name="" id="text"  rows="4" placeholder="请发表你对本文章的评论" ref="text"></textarea>
         </div>
-        
-        <mt-button type="primary" size="large">default</mt-button>
-        <ul class="comments">
-            <li>
-                <p class="head"><span>第一楼</span><span>用户:匿名用户</span><span>发表时间:2018年12月11日23:18:42</span></p>
-                <p class="msg">冷啊</p>
+        <mt-button type="primary" size="large" @click="addContent">发表评论</mt-button>
+        <!-- 评论列表 -->
+        <ul class="comments"> 
+            <li v-for="(item,index) in comment" :key="item.add_time">
+                <p class="head"><span>第{{index+1}}楼</span><span>用户:{{item.user_name}}</span><span>发表时间:{{item.add_time | format}}</span></p>
+                <p class="msg">{{item.content}}</p>
             </li>
         </ul>
+        <!-- 显示更多 -->
+        <mt-button type="primary" size="large" >加载更多</mt-button>
     </div>
 </template>
 
 <script>
+import { getComment, addComment } from "@/axios/axios.js"
 export default {
-
+    data(){
+        return {
+            comment : [],
+            content: "",
+            page: 1
+        }
+    },
+    created(){
+        this.getContent()
+        // console.log(this.$refs.value)
+    },
+    methods:{
+        //获取评论数据
+        getContent(){
+            getComment(this.$route.params.id,this.page).then(res=>{
+                // console.log(res)
+                if(res.status == 0){
+                    this.comment = res.message
+                }
+            })
+        },
+        //添加评论数据
+        addContent(){
+            this.content = this.$refs.text.value
+            addComment(this.$route.params.id, {content:this.content}).then(res => {
+                console.log(res)
+            })
+        }
+    }
 }
 </script>
 

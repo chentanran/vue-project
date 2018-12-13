@@ -25,10 +25,10 @@ export default {
     },
     created(){
        newsInfo(this.$route.params.id).then(res => {
-           console.log(res)
+        //    console.log(res)
            if(res.status == 0){
                this.message = res.message[0]
-               console.log(this.message)
+            //    console.log(this.message)
            }
        })
     // console.log(this.$route.params.id)
