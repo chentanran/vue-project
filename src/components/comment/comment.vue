@@ -7,13 +7,13 @@
         <mt-button type="primary" size="large" @click="addContent">发表评论</mt-button>
         <!-- 评论列表 -->
         <ul class="comments"> 
-            <li v-for="(item,index) in comment" :key="item.add_time">
+            <li v-for="(item,index) in comment" :key="index">
                 <p class="head"><span>第{{index+1}}楼</span><span>用户:{{item.user_name}}</span><span>发表时间:{{item.add_time | format}}</span></p>
                 <p class="msg">{{item.content}}</p>
             </li>
         </ul>
         <!-- 显示更多 -->
-        <mt-button type="primary" size="large" >加载更多</mt-button>
+        <mt-button type="primary" size="large" @click="addPage">加载更多</mt-button>
     </div>
 </template>
 
@@ -37,16 +37,29 @@ export default {
             getComment(this.$route.params.id,this.page).then(res=>{
                 // console.log(res)
                 if(res.status == 0){
-                    this.comment = res.message
+                    this.comment = this.comment.concat(res.message)
                 }
             })
         },
         //添加评论数据
         addContent(){
             this.content = this.$refs.text.value
+            if(this.content.trim().length==0) return;
             addComment(this.$route.params.id, {content:this.content}).then(res => {
                 console.log(res)
+                if(res.status == 0){
+                    this.page = 1
+                   
+                    //从新获取数据
+                    this.getContent()
+                    this.content = ""
+                }
             })
+        },
+        //加载更多
+        addPage(){
+            this.page++;
+            this.getContent()
         }
     }
 }
