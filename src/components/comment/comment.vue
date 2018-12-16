@@ -83,6 +83,7 @@ export default {
                 padding: 3px 5px;
                 box-sizing: border-box;
                 width:99%;
+                border: .5px solid orange;
             }
         }
         .comments{

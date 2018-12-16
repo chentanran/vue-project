@@ -6,6 +6,8 @@ import router from './router'
 import "@/style/common.css" //引入基本样式
 import "@/style/font/iconfont.css" //引入字体文件
 // import "@/mock/mockServer.js" //模拟数据
+import VuePreview from 'vue2-preview' //引入图片预览插件
+Vue.use(VuePreview)
 
 import { Button, Header, Swipe, SwipeItem } from 'mint-ui' //按需引入mint-ui
 Vue.component(Button.name, Button)

@@ -18,3 +18,7 @@ export const addComment = (params, content) => { return axios.post(`/api/postcom
 export const getClassfiy = () => { return axios.get(`/api/getimgcategory`).then(res => res.data) }
 //图片列表数据
 export const getPhotoList = (id) => { return axios.get(`/api/getimages/${id}`).then(res => res.data) }
+//图文详情
+export const  getPhotoinfo = (id) => { return axios.get(`/api/getimageInfo/${id}`).then(res => res.data) }
+//图文详情缩略图
+export const getSmallImage = (id) => { return axios.get(`/api/getthumimages/${id}`).then(res => res.data) }

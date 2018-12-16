@@ -24,11 +24,11 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#/home/newsList">
+                    <a href="#/home/goodsList">
                         <div>
                             <img src="../../image/menu1.png" alt="">
                         </div>
-                        <div>新闻列表</div>
+                        <div>商品列表</div>
                     </a>
                 </li>
                 <li>
