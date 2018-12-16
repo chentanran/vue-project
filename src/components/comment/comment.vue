@@ -46,13 +46,14 @@ export default {
             this.content = this.$refs.text.value
             if(this.content.trim().length==0) return;
             addComment(this.$route.params.id, {content:this.content}).then(res => {
-                console.log(res)
+                // console.log(res)
                 if(res.status == 0){
                     this.page = 1
-                   
+                   this.$refs.text.value = ""
+                    this.comment = []
                     //从新获取数据
                     this.getContent()
-                    this.content = ""
+                   
                 }
             })
         },
