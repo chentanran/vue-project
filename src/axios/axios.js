@@ -14,3 +14,7 @@ export const newsInfo = (params) => { return axios.get(`/api/getnew/${params}`).
 export const getComment = (params, pageindex) => { return axios.get(`/api/getcomments/${params}?pageindex=${pageindex}`).then(res => res.data) }
 //添加评论数据
 export const addComment = (params, content) => { return axios.post(`/api/postcomment/${params}`, content).then(res => res.data) }
+//图片分类数据
+export const getClassfiy = () => { return axios.get(`/api/getimgcategory`).then(res => res.data) }
+//图片列表数据
+export const getPhotoList = (id) => { return axios.get(`/api/getimages/${id}`).then(res => res.data) }

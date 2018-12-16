@@ -43,6 +43,7 @@ export default {
         height: 50px;
         width: 100%;
         background-color: skyblue;
+        z-index: 100;
         .header{
             height: 100%;
         }

@@ -16,11 +16,11 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#/home/newsList">
+                    <a href="#/home/photoList">
                         <div>
                             <img src="../../image/menu1.png" alt="">
                         </div>
-                        <div>新闻列表</div>
+                        <div>图文列表</div>
                     </a>
                 </li>
                 <li>
