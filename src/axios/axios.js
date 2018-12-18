@@ -22,3 +22,5 @@ export const getPhotoList = (id) => { return axios.get(`/api/getimages/${id}`).t
 export const  getPhotoinfo = (id) => { return axios.get(`/api/getimageInfo/${id}`).then(res => res.data) }
 //图文详情缩略图
 export const getSmallImage = (id) => { return axios.get(`/api/getthumimages/${id}`).then(res => res.data) }
+//获取商品列表数据
+export const getGoodsList = (number) => { return axios.get(`/api/getgoods?pageindex=${number}`).then(res => res.data) }
