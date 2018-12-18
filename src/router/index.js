@@ -9,6 +9,7 @@ import shopcar from "@/page/shopcar/shopcar.vue"
 import photoList from "@/page/home/photo/photoList.vue"
 import photoInfo from "@/page/home/photo/photoinfo.vue"
 import goodsList from "@/page/home/goods/goodsList.vue"
+import goodsinfo from "@/page/home/goods/goodsinfo.vue"
 
 
 
@@ -23,6 +24,7 @@ export default new Router({
     {path: "/home/photoList", name: 'photoList', component: photoList},
     {path: "/home/photoinfo/:id", name: 'photoinfo', component: photoInfo},
     {path: "/home/goodsList", name: 'goodsList', component: goodsList},
+    {path: "/home/goodsinfo/:id", name: 'goodsInfo', component: goodsinfo},
     {path: '/member', name: 'member', component: member},
     {path: '/search', name: 'search', component: search},
     {path: '/shopcar', name: 'shopcar', component: shopcar},

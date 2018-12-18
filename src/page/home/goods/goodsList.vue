@@ -1,7 +1,7 @@
 <template>
     <div class="goodsList-contain">
         <ul>
-            <li v-for="item in data" :key="item.id">
+            <li v-for="item in data" :key="item.id" @click="goGoodsInfo(item.id)">
                 <img src="http://img5.imgtn.bdimg.com/it/u=3307854163,181890442&fm=11&gp=0.jpg" alt="">
                 <h3>{{item.title}}</h3>
                 <p class="price"><span>&yen;{{item.sell_price}}</span> <span>&yen;{{item.market_price}}</span></p>
@@ -48,6 +48,10 @@ export default {
             this.pageindex++;
             console.log(this.pageindex)
             this.goodsList()
+        },
+        //跳转到详情页
+        goGoodsInfo(id){
+            this.$router.push({ name: 'goodsInfo', params: { id }})
         }
     }
 }
